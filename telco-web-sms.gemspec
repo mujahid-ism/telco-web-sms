@@ -5,20 +5,20 @@ require_relative "lib/telco/web/sms/version"
 Gem::Specification.new do |spec|
   spec.name          = "telco-web-sms"
   spec.version       = Telco::Web::Sms::VERSION
-  spec.authors       = ["anonymous"]
-  spec.email         = ["prakashsanyasi619@gmail.com"]
+  spec.authors       = ["Prakash Sanyasi"]
+  spec.email         = ["ps@selise.ch"]
 
-  spec.summary       = "TODO: Write a short summary, because RubyGems requires one."
-  spec.description   = "TODO: Write a longer description or delete this line."
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = "SDK for Web SMS"
+  spec.description   = "Send sms using web sms services"
+  spec.homepage      = "https://telecom.selise.ch/"
   spec.license       = "MIT"
-  spec.required_ruby_version = ">= 2.7.0"
+  spec.required_ruby_version = Gem::Requirement.new(">= 2.7")
 
-  spec.metadata["allowed_push_host"] = "TODO: Set to 'https://mygemserver.com'"
+  spec.metadata["allowed_push_host"] = "https://gems.selise.tech"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "TODO: Put your gem's public repo URL here."
-  spec.metadata["changelog_uri"] = "TODO: Put your gem's CHANGELOG.md URL here."
+  spec.metadata["source_code_uri"] = "https://bitbucket.org/selise07/telco-web-sms"
+  spec.metadata["changelog_uri"] = "https://bitbucket.org/selise07/telco-web-sms/src/master/CHANGELOG.md"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
@@ -27,13 +27,12 @@ Gem::Specification.new do |spec|
       (f == __FILE__) || f.match(%r{\A(?:(?:test|spec|features)/|\.(?:git|travis|circleci)|appveyor)})
     end
   end
+
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  # Uncomment to register a new dependency of your gem
-  # spec.add_dependency "example-gem", "~> 1.0"
-
-  # For more information and examples about making a new gem, checkout our
-  # guide at: https://bundler.io/guides/creating_gem.html
+  spec.add_dependency "faraday", "~> 1.5.0"
+  spec.add_dependency "faraday-detailed_logger", "~> 2.3.0"
+  spec.add_dependency "faraday_middleware", "~> 1.0.0"
 end
