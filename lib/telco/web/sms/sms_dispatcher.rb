@@ -17,7 +17,7 @@ module Telco
           end
         rescue Faraday::ClientError, Faraday::ConnectionFailed => e
           Rollbar.error(error, params: params) if defined?(Rollbar)
-          OpenStruct.new(status: 707, body: e)
+          OpenStruct.new(status: 500, body: e)
         end
 
         private
