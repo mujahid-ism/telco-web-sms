@@ -1,15 +1,13 @@
 # Telco::Web::Sms
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/telco/web/sms`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Sends SMS using the Web SMS service (leading premium provider of mobile messaging services in the German-speaking area).
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'telco-web-sms'
+gem 'telco-web-sms', source: 'https://gems.selise.tech'
 ```
 
 And then execute:
@@ -22,7 +20,26 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+- Create an initializer called, `telco_web_sms.rb` and define this format
+```ruby
+Telco::Web::Sms.configure do |config|
+  config.username = 'unknown'
+  config.password = '*******'
+  config.web_sms_url = 'https://api.websms.com/rest/'
+end
+```
+- Kindly ensure that the secrets are passed from encrypted credentials and not hardcoded anywhere in your source.
+- Once you have defined this, you can then use the the gem to send simple sms this way.
+```ruby
+Telco::Web::Sms.send_text(message: 'Hello World', recipient: '97517712345', test: true)
+# test => true: The transmission is only simulated, no SMS is sent.
+# test => false (default): No simulation is done. The SMS is sent via the SMS Gateway.
+```
+
+## Projects using telco-web-sms
+
+For reference(when you want to see how existing applications are using this gem)
+- [ew-buchs](https://bitbucket.org/selise07/ew-buchs/src)
 
 ## Development
 
