@@ -7,7 +7,7 @@ Sends SMS using the Web SMS service (leading premium provider of mobile messagin
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'telco-web-sms'
+gem 'telco-web-sms', source: 'https://gems.selise.tech'
 ```
 
 And then execute:
@@ -35,6 +35,11 @@ Telco::Web::Sms.send_text(message: 'Hello World', recipient: '97517712345', test
 # test => true: The transmission is only simulated, no SMS is sent.
 # test => false (default): No simulation is done. The SMS is sent via the SMS Gateway.
 ```
+
+## Projects using telco-web-sms
+
+For reference(when you want to see how existing applications are using this gem)
+- [ew-buchs](https://bitbucket.org/selise07/ew-buchs/src)
 
 ## Development
 

@@ -6,7 +6,7 @@ module Telco
       class SimpleSms
         class InvalidUsernameOrPassword < StandardError; end
 
-        class WbSmsApiException < StandardError; end
+        class WebSmsApiException < StandardError; end
 
         class AuthorizationFailedException < StandardError
           def message
@@ -28,7 +28,7 @@ module Telco
           case response.status
           when 200 then process_response(response.body)
           when 401 then raise(InvalidUsernameOrPassword)
-          else raise(WbSmsApiException, "STATUS CODE: #{response.status}. response: #{response.body}")
+          else raise(WebSmsApiException, "STATUS CODE: #{response.status}. response: #{response.body}")
           end
         end
 
@@ -48,7 +48,7 @@ module Telco
           case status_code
           when "2000", "2001" then message
           when "4001" then raise(AuthorizationFailedException)
-          else raise(WbSmsApiException, "STATUS CODE: #{status_code}. response: #{message}")
+          else raise(WebSmsApiException, "STATUS CODE: #{status_code}. response: #{message}")
           end
         end
 
