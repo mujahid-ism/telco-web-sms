@@ -7,7 +7,7 @@ Sends SMS using the Web SMS service (leading premium provider of mobile messagin
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'telco-web-sms', source: 'https://gems.selise.tech'
+gem 'telco-web-sms', github: 'mujahid-ism/telco-web-sms'
 ```
 
 And then execute:
