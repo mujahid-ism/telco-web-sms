@@ -4,7 +4,7 @@ PATH
     telco-web-sms (0.1.0)
       faraday (~> 1.0.0)
       faraday-detailed_logger (~> 2.3.0)
-      faraday_middleware (~> 1.0.0)
+      faraday_middleware (>= 0.10)
 
 GEM
   remote: https://rubygems.org/
@@ -16,7 +16,7 @@ GEM
       multipart-post (>= 1.2, < 3)
     faraday-detailed_logger (2.3.0)
       faraday (>= 0.8, < 2)
-    faraday_middleware (1.0.0)
+    faraday_middleware (1.2.0)
       faraday (~> 1.0)
     json (2.6.3)
     language_server-protocol (3.17.0.3)
