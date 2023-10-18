@@ -34,6 +34,6 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "faraday", "~> 0.9"
   spec.add_dependency "faraday-detailed_logger", "~> 2.5.0"
-  spec.add_dependency "faraday_middleware", "~> 1.5"
+  spec.add_dependency "faraday_middleware", "~> 1.5.0"
   spec.metadata["rubygems_mfa_required"] = "true"
 end
