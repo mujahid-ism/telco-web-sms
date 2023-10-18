@@ -33,7 +33,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "faraday", "~> 0.9"
-  spec.add_dependency "faraday-detailed_logger", "~> 2.1.0"
-  spec.add_dependency "faraday_middleware", "~> 0.9"
+  spec.add_dependency "faraday-detailed_logger", "~> 2.5.0"
+  spec.add_dependency "faraday_middleware", "~> 1.5"
   spec.metadata["rubygems_mfa_required"] = "true"
 end
