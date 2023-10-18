@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    telco-web-sms (0.1.0)
+    telco-web-sms (0.1.1)
       faraday (~> 0.9)
       faraday-detailed_logger (~> 2.3.0)
       faraday_middleware (~> 0.9)
