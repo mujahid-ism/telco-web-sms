@@ -24,9 +24,8 @@ module Telco
 
         def client
           Faraday.new(Configuration.default.web_sms_url) do |connection|
-            connection.request :url_encoded # Use the `:url_encoded` middleware
-            connection.adapter Faraday.default_adapter # Use the default adapter
-            # connection.adapter Faraday::Request::UrlEncoded
+            connection.adapter Faraday::Request::UrlEncoded
+            connection.adapter Faraday::Request::UrlEncoded
             connection.adapter Faraday::Response::RaiseError
             connection.adapter Faraday::Adapter::NetHttp
             connection.response :detailed_logger, Rails.logger, "web-sms"
