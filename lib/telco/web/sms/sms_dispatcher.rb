@@ -33,9 +33,8 @@ module Telco
             connection.request :url_encoded
             connection.response :raise_error
             connection.adapter :net_http
+            connection.use FaradayMiddleware::EncodeJson, content_type: "application/json"
             connection.response :detailed_logger, Rails.logger, "web-sms"
-            connection.request :json
-            connection.headers['Content-Type'] = 'application/json'
           end
         end
 
